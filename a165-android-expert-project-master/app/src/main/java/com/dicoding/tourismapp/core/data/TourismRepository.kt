@@ -11,13 +11,13 @@ import com.dicoding.tourismapp.core.utils.DataMapper
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class TourismRepository private constructor(
+class TourismRepository(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource,
     private val appExecutors: AppExecutors
 ) : ITourismRepository {
 
-    companion object {
+    /*companion object {
         @Volatile
         private var instance: TourismRepository? = null
 
@@ -29,7 +29,7 @@ class TourismRepository private constructor(
             instance ?: synchronized(this) {
                 instance ?: TourismRepository(remoteData, localData, appExecutors)
             }
-    }
+    }*/
 
     override fun getAllTourism(): Flow<Resource<List<Tourism>>> =
         object : NetworkBoundResource<List<Tourism>, List<TourismResponse>>() {

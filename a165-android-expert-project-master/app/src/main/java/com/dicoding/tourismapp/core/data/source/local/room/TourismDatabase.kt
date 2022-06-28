@@ -13,7 +13,7 @@ abstract class TourismDatabase : RoomDatabase() {
 
     abstract fun tourismDao(): TourismDao
 
-    companion object {
+    /*companion object {
         @Volatile
         private var INSTANCE: TourismDatabase? = null
 
@@ -29,5 +29,5 @@ abstract class TourismDatabase : RoomDatabase() {
             INSTANCE = instance
             instance
         }
-    }
+    }*/
 }

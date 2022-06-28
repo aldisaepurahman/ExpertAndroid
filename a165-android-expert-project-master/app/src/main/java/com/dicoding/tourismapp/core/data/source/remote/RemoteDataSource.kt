@@ -9,8 +9,8 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
-class RemoteDataSource private constructor(private val apiService: ApiService) {
-    companion object {
+class RemoteDataSource(private val apiService: ApiService) {
+    /*companion object {
         @Volatile
         private var instance: RemoteDataSource? = null
 
@@ -18,7 +18,7 @@ class RemoteDataSource private constructor(private val apiService: ApiService) {
             instance ?: synchronized(this) {
                 instance ?: RemoteDataSource(service)
             }
-    }
+    }*/
 
     suspend fun getAllTourism(): Flow<ApiResponse<List<TourismResponse>>> {
         return flow {
